@@ -32,13 +32,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 h-full flex items-center py-1">
             <Image
               src="/images/brand/logo.webp"
               alt="El Colorado Tires & Wheels"
-              height={48}
-              width={120}
-              className="object-contain h-10 lg:h-12 w-auto"
+              height={80}
+              width={200}
+              className="object-contain h-full w-auto"
               priority
             />
           </Link>

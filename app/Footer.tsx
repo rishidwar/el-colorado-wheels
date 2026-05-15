@@ -8,13 +8,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <Image
               src="/images/brand/logo.webp"
               alt="El Colorado Tires & Wheels"
-              height={56}
-              width={140}
-              className="object-contain h-14 w-auto mb-4"
+              height={224}
+              width={560}
+              className="object-contain h-56 w-auto mb-4"
             />
             <p className="text-[#A3A3A3] text-sm leading-relaxed">
               Serving the Edgewater and Denver community with honest service, affordable prices, and no appointment needed.
