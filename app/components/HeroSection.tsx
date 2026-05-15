@@ -30,16 +30,16 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Content */}
-      <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
-        style={{ opacity: textOpacity }}
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Blur panel — never opacity:0, keeps backdrop-filter compositing alive */}
         <motion.div
           initial={{ opacity: 0, y: 48 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="w-fit backdrop-blur-md bg-black/30 rounded-2xl px-8 py-10 border border-white/5"
+          className="w-fit backdrop-blur-md bg-black/30 rounded-2xl border border-white/5"
         >
+          {/* Content fades on scroll independently */}
+          <motion.div style={{ opacity: textOpacity }} className="px-8 py-10">
           <p className="font-oswald text-[#E8A820] uppercase tracking-[0.3em] text-sm mb-4">
             Edgewater, CO · Est. 1990s
           </p>
@@ -75,8 +75,9 @@ export default function HeroSection() {
               <ArrowRight size={17} />
             </Link>
           </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Bottom fade into page */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10" />
