@@ -106,17 +106,67 @@ Ultra-low sidewall for precision handling and aggressive stance. Wide contact pa
 
 ---
 
-## About Section
+## About Page (Full — Phase 1)
+
+### Page Hero / Header
+**Headline:** `30 Years in Edgewater`
+**Subline:** `Same family. Same promise. Better every year.`
+
+---
+
+### Dual-Era Section
+
+**Old photo label (grayscale):** `The Beginning`
+**New photo label (color):** `Today`
+
+**Pull quote (between / below photos — Playfair Display italic):**
+`"30 years in Edgewater. Same family, same promise."`
+
+---
+
+### Story Section
+
+**Section headline:** `How It Started`
+
+**Body — paragraph 1:**
+`El Colorado Wheels opened its doors in Edgewater over 30 years ago on a simple idea: the neighborhood deserved a tire shop that treated people right. Not a chain with corporate quotas. Not a place that tells you the tire can't be patched when it can. A real shop, run by real people, for the community around it.`
+
+**Body — paragraph 2:**
+`Hector built this place from the ground up. The white walls and hand-painted signs you see in old photos gave way to a renovated shop with a look as bold as the work that happens inside — but the approach never changed. Fast, honest service. No appointments needed. No pressure to buy something you don't need.`
+
+**Body — paragraph 3:**
+`From a quick flat repair on your daily driver to a full set of all-terrain tires for your lifted truck — the El Colorado team handles it all with the same attitude they always have. That's why customers keep coming back for years, and why they send their families too.`
+
+---
+
+### Stats Strip (inside About page)
+`30+ Years in Business · 4.6 ⭐ Google Rating · 484 Reviews · Edgewater's Tire Shop`
+
+---
+
+### Services Preview (short version, links to /services)
+**Headline:** `What We Do`
+`Flat repairs · Used tires · New tire sets · Rim sales · TPMS sensors · Seasonal swaps`
+**CTA:** `See All Services →`
+
+---
+
+### CTA Band (bottom of About page)
+**Headline:** `Come See Us`
+**Address:** `2245 Sheridan Blvd, Edgewater, CO 80214`
+**Phone:** `(303) 237-5650`
+**CTA 1:** `Call Now` → `tel:3032375650`
+**CTA 2:** `Get Directions` → Google Maps link
+
+---
+
+## About Teaser (Homepage Section — shorter version)
 
 **Headline:** `Honest Service Since Day One`
 **Body:**
-`El Colorado Wheels has been a fixture of the Edgewater community for years. Owner Hector and his team built this shop on a simple promise: give people quality tires at fair prices without the upsell pressure you get at the big chains.
+`30 years in Edgewater. Hector and his team built El Colorado Wheels on a simple promise — quality tires, fair prices, no pressure. The same promise they keep every single day.`
 
-Whether you rolled in with a nail in your tire or you're building out a custom truck, everyone gets the same treatment — fast, honest work at a price that makes sense.
-
-4.6 stars across 484 Google reviews isn't marketing. It's what happens when a shop actually cares.`
-
-**CTA:** `Get Directions` → Google Maps link
+**CTA:** `Our Story →` → `/about`
 
 ---
 

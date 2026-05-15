@@ -69,13 +69,19 @@ Reduces file size 40–70% with zero visible quality loss.
 
 ---
 
-## PHASE 1 — Homepage (Deploy Target: First Release)
+## PHASE 1 — Homepage + About Page (Deploy Target: First Release)
 
 **Branch:** `phase-1/homepage`  
-**Goal:** Fully functional homepage that looks world-class. Zero broken links —
-any nav item that doesn't have a page yet simply doesn't appear or scrolls
-to the relevant homepage section instead.  
+**Goal:** Fully functional homepage AND `/about` page. These two together
+form a complete first impression. Zero broken links — any nav item without
+a page yet scrolls to the homepage anchor section instead.  
 **Deploy:** Merges to `main` → live at elcolorado.com via Vercel
+
+**Why About is Phase 1:**
+The shop is 30 years old. That story IS the brand differentiator.
+A homepage without `/about` live feels incomplete and leaves the
+most compelling copy — the 30-year arc, the dual photos, Hector's name —
+unreachable. It also uses only confirmed assets we already have.
 
 ### What Phase 1 Includes
 
@@ -97,12 +103,18 @@ to the relevant homepage section instead.
 - [ ] `app/Footer.tsx` — minimal, address, phone, copyright
 - [ ] `app/ConditionalShell.tsx` — wraps header/footer (same pattern as rishidwar)
 
-**Header nav items (Phase 1 — scroll-to anchors only, no page links):**
+**Header nav items (Phase 1):**
 ```
-Logo | Services | Inventory | About | Contact | [Call Now button]
+[Logo Photo] | Services | Tires | About | Contact | [Call Now button]
 ```
-All nav items scroll to the homepage section with that ID.
-No href links to pages that don't exist yet.
+- `Services` → scrolls to `#services` anchor on homepage
+- `Tires` → scrolls to `#inventory` anchor on homepage
+- `About` → **real link to `/about` page** (live in Phase 1)
+- `Contact` → scrolls to `#contact` anchor on homepage
+- `Call Now` → `tel:3032375650` (always live)
+
+Logo: `<Image src="/images/brand/logo-sign.webp" height={48}>` — the actual
+sign photo, black bg blends with header naturally. Links to `/`.
 
 #### 1.3 Hero Section (`app/components/HeroSection.tsx`)
 - [ ] Full-bleed shop photo background (`storefront-hero.webp`)
@@ -149,16 +161,62 @@ No href links to pages that don't exist yet.
 - [ ] Attribution: "— Google Review, [month year]"
 - [ ] Below carousel: `4.6 ★★★★½ · 484 Reviews on Google` with link to Maps listing
 
-#### 1.8 About Teaser (`app/components/AboutTeaser.tsx`)
+#### 1.8 About Teaser — Homepage Section (`app/components/AboutTeaser.tsx`)
 - [ ] Section ID: `#about`
-- [ ] Two-column layout (desktop): left = logo sign photo, right = text
+- [ ] Dark background, two-column (desktop): left = logo sign photo, right = text
 - [ ] Headline: `Honest Service Since Day One`
-- [ ] Body copy from `CONTENT.md` about section
-- [ ] Hector's name prominently mentioned
-- [ ] Single CTA: `Get Directions →` (links to Google Maps)
+- [ ] Body: short version from `CONTENT.md` About Teaser block
+- [ ] Hector's name mentioned
+- [ ] CTA: `Our Story →` → links to `/about` (live in Phase 1)
 - [ ] Mobile: stacked, image first
 
-#### 1.9 Contact / CTA Band (`app/components/ContactBand.tsx`)
+#### 1.9 About Page (`app/about/page.tsx`) — PHASE 1
+- [ ] Full `/about` route — standalone page with own metadata
+- [ ] SEO title: `About El Colorado Wheels | 30 Years in Edgewater, CO`
+- [ ] SEO description: from `CONTENT.md`
+
+**Section A — Page Header**
+- [ ] Full-width dark hero band (no photo — text only)
+- [ ] Headline: `30 Years in Edgewater` — Bebas Neue, large
+- [ ] Subline: `Same family. Same promise. Better every year.`
+- [ ] Logo sign photo as accent element (right-aligned, ~240px)
+
+**Section B — Dual Era Photos** (`app/components/DualEraPhotos.tsx`)
+- [ ] Gradient background from `DESIGN_SYSTEM.md` — very dark warm diagonal
+- [ ] Two-column layout on desktop, stacked on mobile
+- [ ] **Left — Old Storefront** (`storefront-old.webp`):
+  - CSS: `filter: grayscale(100%) contrast(1.05) brightness(0.95)`
+  - Dark overlay: `bg-stone-900/25 mix-blend-multiply`
+  - Label: `"The Beginning"` — neutral-400, small caps
+  - Slide-in from left on scroll: `whileInView x: -60 → 0`
+- [ ] **Right — New Storefront** (`storefront-new.webp`):
+  - Full color, no filter
+  - Label: `"Today"` — brand-gold, small caps
+  - Slide-in from right on scroll: `whileInView x: 60 → 0`
+- [ ] Between photos (desktop): thin gold horizontal rule with `→` arrow at center
+- [ ] Pull quote below both photos: `"30 years in Edgewater. Same family, same promise."` — Playfair Display italic, brand-gold
+- [ ] Gradient background tapers back to `--bg-base` via `bg-gradient-to-b`
+
+**Section C — Story Copy**
+- [ ] Headline: `How It Started`
+- [ ] Three body paragraphs from `CONTENT.md` About Page copy
+- [ ] Dark background, normal spacing
+- [ ] No photos — let the words carry this section
+
+**Section D — Stats Strip**
+- [ ] Horizontal band: `30+ Years · 4.6 ⭐ · 484 Reviews · Edgewater's Tire Shop`
+- [ ] Same marquee component as Stats Bar (reuse `StatsBar.tsx`)
+
+**Section E — Services Preview + CTA**
+- [ ] Mini services grid (3 cols, icon + name only — simpler than homepage version)
+- [ ] CTA: `See All Services →` (scrolls to homepage `#services` in Phase 1, links to `/services` in Phase 3)
+- [ ] Secondary CTA: `Call (303) 237-5650` → `tel:3032375650`
+
+**Section F — Map / Find Us**
+- [ ] Address block + Google Maps embed (reuse `ContactBand.tsx` partial)
+- [ ] `Get Directions` button
+
+#### 1.10 Contact / CTA Band (`app/components/ContactBand.tsx`)
 - [ ] Section ID: `#contact`
 - [ ] Full-width dark section, gold accent
 - [ ] Left: Address, phone, hours table (from `CONTENT.md`)
@@ -214,27 +272,29 @@ No href links to pages that don't exist yet.
 
 ---
 
-## PHASE 3 — Inner Pages (Services · About · Contact)
+## PHASE 3 — Services + Contact Pages
 
 **Branch:** `phase-3/inner-pages`  
-**Goal:** Full pages for every nav item, all hyperlinks live
+**Goal:** Full pages for remaining nav items. About is already live from Phase 1.
 
 ### 3.1 Services Page (`app/services/page.tsx`)
-- Expanded service descriptions (longer than homepage cards)
-- FAQ section: "Do I need an appointment?", "Do you buy used tires?", etc.
-- Price list (where applicable)
+- Full service descriptions with pricing table
+- FAQ section: "Do I need an appointment?", "Do you buy used tires?",
+  "Do you do alignments?", "What tire brands do you carry?"
+- Structured data: `Service` schema for each service
+- CTA: links to `/request` (Phase 4) and `tel:` number
 
-### 3.2 About Page (`app/about/page.tsx`)
-- Full Hector story
-- Shop history / community section
-- Photo of shop (logo sign, possibly interior)
-- Google review widget or static carousel
+### 3.2 Contact Page (`app/contact/page.tsx`)
+- Dedicated full-page contact layout
+- Large Google Maps embed
+- Complete hours grid (confirmed with Hector)
+- Multiple CTAs: Call · Directions · Submit Request
+- Address + hours JSON-LD schema
 
-### 3.3 Contact Page (`app/contact/page.tsx`)
-- Full-page map embed
-- Complete hours grid
-- Multiple CTAs: call, get directions, submit request
-- Address schema markup
+### 3.3 Nav Update
+- Header upgrades from scroll-anchors to real page links:
+  `Services → /services` | `Contact → /contact`
+- Footer gets full link set
 
 ---
 
