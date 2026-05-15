@@ -12,7 +12,7 @@ export const services: Service[] = [
     name: 'Flat Tire Repair',
     icon: 'wrench',
     description: 'Quick patch or plug — most repairs done in under 20 minutes.',
-    price: 'Starting at $15',
+    price: 'Call for pricing',
   },
   {
     id: 'used-tires',
