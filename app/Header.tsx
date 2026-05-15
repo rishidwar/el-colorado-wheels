@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
@@ -32,15 +31,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/images/brand/logo-sign.webp"
-              alt="El Colorado Tires & Wheels"
-              height={48}
-              width={144}
-              className="object-contain"
-              priority
-            />
+          <Link href="/" className="flex-shrink-0 group">
+            <div className="flex flex-col leading-none">
+              <span className="font-bebas text-[#E8A820] text-2xl lg:text-3xl tracking-wide group-hover:text-white transition-colors duration-200">
+                El Colorado
+              </span>
+              <span className="font-oswald text-[#6B6B6B] text-[9px] lg:text-[10px] uppercase tracking-[0.25em] group-hover:text-[#A3A3A3] transition-colors duration-200">
+                Tires &amp; Wheels
+              </span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
