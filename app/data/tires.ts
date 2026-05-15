@@ -63,18 +63,6 @@ export const tires: Tire[] = [
     bestFor: 'Daily drivers, sedans, crossovers, year-round Colorado use',
   },
   {
-    id: 'cc2-used',
-    name: 'CrossClimate 2',
-    type: 'all-season',
-    condition: 'used',
-    brand: 'Michelin',
-    size: '205/55R16 – 275/50R20',
-    price: 'Call for pricing',
-    image: '/images/tires/crossclimate2.webp',
-    description: 'Quality pre-owned Michelin all-season tires — same reliable all-weather performance at a fraction of the price.',
-    bestFor: 'Budget-conscious daily drivers, sedans, crossovers',
-  },
-  {
     id: 'ko2-new',
     name: 'All-Terrain T/A KO2',
     type: 'all-terrain',

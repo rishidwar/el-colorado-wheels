@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, MapPin, Clock } from 'lucide-react'
 
@@ -8,14 +9,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex flex-col leading-none mb-4">
-              <span className="font-bebas text-[#E8A820] text-2xl tracking-wide">
-                El Colorado
-              </span>
-              <span className="font-oswald text-[#6B6B6B] text-[9px] uppercase tracking-[0.25em]">
-                Tires &amp; Wheels
-              </span>
-            </div>
+            <Image
+              src="/images/brand/logo.webp"
+              alt="El Colorado Tires & Wheels"
+              height={56}
+              width={140}
+              className="object-contain h-14 w-auto mb-4"
+            />
             <p className="text-[#A3A3A3] text-sm leading-relaxed">
               Serving the Edgewater and Denver community with honest service, affordable prices, and no appointment needed.
             </p>

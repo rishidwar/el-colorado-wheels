@@ -42,13 +42,13 @@ export default function HeroSection() {
           <p className="font-oswald text-[#E8A820] uppercase tracking-[0.3em] text-sm mb-4">
             Edgewater, CO · Est. 1990s
           </p>
-          <h1
-            className="font-bebas text-white leading-none mb-6"
-            style={{ fontSize: 'clamp(3.5rem, 9vw, 8rem)' }}
-          >
-            EL COLORADO
-            <br />
-            <span className="text-logo-gradient">WHEELS</span>
+          <h1 className="font-bebas text-white leading-none mb-6">
+            <span className="block" style={{ fontSize: 'clamp(3.5rem, 9vw, 8rem)' }}>
+              EL COLORADO
+            </span>
+            <span className="block text-logo-gradient" style={{ fontSize: 'clamp(2.7rem, 6.9vw, 6.15rem)' }}>
+              TIRES &amp; WHEELS
+            </span>
           </h1>
           <p className="text-[#A3A3A3] text-lg max-w-xl mb-8 leading-relaxed">
             Tires · Rims · Repairs · Edgewater, CO
