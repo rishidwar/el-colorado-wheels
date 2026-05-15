@@ -45,7 +45,7 @@ export default function TireCard({ tire }: TireCardProps) {
           <span className="text-[#A3A3A3]">Best for:</span> {tire.bestFor}
         </p>
 
-        <div className="flex items-center justify-between border-t border-[#2a2a2a] pt-3">
+        <div className="flex flex-col gap-2 border-t border-[#2a2a2a] pt-3">
           <span className="text-[#E8A820] font-semibold text-sm">{tire.price}</span>
           <a
             href="tel:3032375650"
