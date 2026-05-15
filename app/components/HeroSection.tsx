@@ -38,6 +38,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 48 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="w-fit backdrop-blur-md bg-black/30 rounded-2xl px-8 py-10 border border-white/5"
         >
           <p className="font-oswald text-[#E8A820] uppercase tracking-[0.3em] text-sm mb-4">
             Edgewater, CO · Est. 1990s
